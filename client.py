@@ -49,9 +49,9 @@ class Client:
                 rec1 = data.split('\n')
                 for i in rec1[1:-2]:
                     if i.split(' ')[0] not in metrics: 
-                        metrics[i.split(' ')[0]] = [(int(i.split(' ')[2]), float(i.split(' ')[1]))] 
+                        metrics[i.split(' ')[0]] = [(int(i.split(' ')[2]), float(i.split(' ')[1]),)] 
                     else:
-                        metrics[i.split(' ')[0]].append((int(i.split(' ')[2]), float(i.split(' ')[1])))
+                        metrics[i.split(' ')[0]].append((int(i.split(' ')[2]), float(i.split(' ')[1]),))
                 for i in metrics:
                     metrics[i] = sorted(metrics[i], key=lambda x: x[0])
             else:
@@ -59,9 +59,9 @@ class Client:
                 for i in rec2[1:-2]:
                     if i.split(' ')[0] == key:
                         if i.split(' ')[0] not in metrics: 
-                            metrics[i.split(' ')[0]] = [(int(i.split(' ')[2]), float(i.split(' ')[1]))] 
+                            metrics[i.split(' ')[0]] = [(int(i.split(' ')[2]), float(i.split(' ')[1]),)] 
                         else:
-                            metrics[i.split(' ')[0]].append((int(i.split(' ')[2]), float(i.split(' ')[1])))
+                            metrics[i.split(' ')[0]].append((int(i.split(' ')[2]), float(i.split(' ')[1]),))
                 for i in metrics:
                     metrics[i] = sorted(metrics[i], key=lambda x: x[0])
 
